@@ -1,3 +1,4 @@
+// create QR code
 var canvas = document.createElement('canvas');
 canvas.id = 'Canvas';
 canvas.width = 10 * 31;
