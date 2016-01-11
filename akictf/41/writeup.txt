@@ -7,6 +7,8 @@ Plack::Middleware::Session::Cookie
 で使われているシークレットキーを割出さねばならない。
 
 see)
+https://speakerdeck.com/mala/how-to-hack-metacpan-dot-org
+http://sssslide.com/speakerdeck.com/akiym/cui-ruo-naapuriwoshu-kuji-shu
 http://cpansearch.perl.org/src/MIYAGAWA/Plack-Middleware-Session-0.24/lib/Plack/Middleware/Session/Cookie.pm
 
 Digest::HMAC_SHA1::hmac_sha1_hex($b64, $self->secret);
