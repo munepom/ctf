@@ -1,0 +1,13 @@
+Plack のセッション改竄問題。
+セッションデータを Storable::thaw(decode_base64($data)) で復元すると、データが丸わかり。
+これを書き換えて、name = "FLAG" なポケモンを作成し、halloffame = 1 とした状態で /flag へアクセスすれば、フラグを得られるだろう。
+
+ただし、セッション改竄のためには、
+Plack::Middleware::Session::Cookie
+で使われているシークレットキーを割出さねばならない。
+
+see)
+http://cpansearch.perl.org/src/MIYAGAWA/Plack-Middleware-Session-0.24/lib/Plack/Middleware/Session/Cookie.pm
+
+Digest::HMAC_SHA1::hmac_sha1_hex($b64, $self->secret);
+を破らねばならぬようだ。。。
